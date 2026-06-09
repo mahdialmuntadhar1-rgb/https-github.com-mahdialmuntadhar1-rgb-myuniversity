@@ -73,7 +73,7 @@ export default function ProfileView({
               src={user.avatar} 
               alt={user.name} 
               className="w-20 h-20 rounded-2xl object-cover border-4 border-white shadow-md"
-              referrerpolicy="no-referrer"
+              referrerPolicy="no-referrer"
             />
             <span className="absolute bottom-0 right-0 bg-orange-500 text-white text-[10px] font-black w-6 h-6 rounded-full flex items-center justify-center border-2 border-white">
               L{user.level}
@@ -86,7 +86,7 @@ export default function ProfileView({
           </h2>
 
           <p className="text-[10px] bg-orange-50 text-orange-600 border border-orange-100 font-extrabold px-2.5 py-0.5 rounded-lg uppercase mt-1 leading-none w-max">
-            {language === 'ar' ? 'طالب متميز' : language === 'ku' ? 'خوێندکاری نایاب' : 'Elite Classmate Student'}
+            {getTranslation('eliteStudent', language)}
           </p>
 
           <div className="flex flex-col gap-0.5 text-center text-gray-400 font-bold text-[10px] mt-2">
@@ -104,7 +104,7 @@ export default function ProfileView({
             className="mt-3 text-[9px] font-black text-indigo-600 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200/50 rounded-xl px-3 py-1.5 cursor-pointer transition-colors flex items-center gap-1"
           >
             <ArrowRightLeft className="w-3 h-3" />
-            <span>Switch Role (Simulate Graduate/Teacher/Staff)</span>
+            <span>{getTranslation('switchRoleBtn', language)}</span>
           </button>
         </div>
 
@@ -175,8 +175,8 @@ export default function ProfileView({
           bookmarkedItems.length === 0 ? (
             <div className="text-center py-10 bg-white border border-gray-100 rounded-2xl p-4 text-gray-400 text-xs">
               <div className="text-2xl mb-1.5">🔖</div>
-              <h4 className="font-extrabold text-gray-700">No saved bookmarks yet</h4>
-              <p className="text-[10px] text-gray-400 mt-0.5">Click the bookmark icon on any card on Campus Today, Life, or Future tabs to persist it here.</p>
+              <h4 className="font-extrabold text-gray-700">{getTranslation('bookmarksEmptyTitle', language)}</h4>
+              <p className="text-[10px] text-gray-400 mt-0.5">{getTranslation('bookmarksEmptyDesc', language)}</p>
             </div>
           ) : (
             bookmarkedItems.map(item => (
@@ -198,8 +198,8 @@ export default function ProfileView({
           activeEngagements.length === 0 ? (
             <div className="text-center py-10 bg-white border border-gray-100 rounded-2xl p-4 text-gray-400 text-xs text-center">
               <div className="text-2xl mb-1.5">💼</div>
-              <h4 className="font-extrabold text-gray-700">No submitted entries yet</h4>
-              <p className="text-[10px] text-gray-400 mt-0.5">Your internship applications, event registrations, and study groups will gather here.</p>
+              <h4 className="font-extrabold text-gray-700">{getTranslation('entriesEmptyTitle', language)}</h4>
+              <p className="text-[10px] text-gray-400 mt-0.5">{getTranslation('entriesEmptyDesc', language)}</p>
             </div>
           ) : (
             activeEngagements.map(item => (

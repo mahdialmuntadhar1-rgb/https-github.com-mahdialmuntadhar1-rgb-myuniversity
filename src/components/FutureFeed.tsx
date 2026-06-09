@@ -214,7 +214,7 @@ export default function FutureFeed({
         </div>
       </div>
 
-      {/* Modern Search bar filter */}
+      {/* Clear search query button conditionally */}
       <div className="relative mb-4" id="future-search-bar">
         <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none text-gray-400">
           <Search className="w-4 h-4" />
@@ -230,9 +230,9 @@ export default function FutureFeed({
           <button 
             type="button" 
             onClick={() => setSearchQuery('')}
-            className="absolute inset-y-0 right-3 flex items-center text-xs font-bold text-indigo-600 active:scale-95"
+            className="absolute inset-y-0 right-3 flex items-center text-xs font-bold text-indigo-600 active:scale-95 px-2"
           >
-            Clear
+            {language === 'ar' ? 'مسح' : language === 'ku' ? 'سڕینەوە' : 'Clear'}
           </button>
         )}
       </div>
@@ -240,7 +240,7 @@ export default function FutureFeed({
       {/* Deadlines Alert list */}
       <div className="bg-white rounded-2xl border border-gray-100 p-3.5 mb-5 shadow-sm" id="deadlines-ticker-panel">
         <h3 className="text-[10px] font-black uppercase text-pink-500 tracking-wider mb-2.5 flex items-center gap-1.5">
-          <BellRing className="w-4 h-4 text-pink-500 animate-bounce" /> Upcoming Deadlines & Calendar Reminders
+          <BellRing className="w-4 h-4 text-pink-500 animate-bounce" /> {getTranslation('upcomingDeadlines', language)}
         </h3>
         <div className="grid grid-cols-2 gap-2.5">
           {timelineReminders.map((rem, i) => (
@@ -249,7 +249,7 @@ export default function FutureFeed({
                 {language === 'ar' ? rem.titleAR : language === 'ku' ? rem.titleKU : rem.titleEN}
               </p>
               <div className="flex items-center justify-between mt-1">
-                <span className="text-[8px] text-gray-400 font-bold uppercase">Due Date</span>
+                <span className="text-[8px] text-gray-400 font-bold uppercase">{getTranslation('dueDateLabel', language)}</span>
                 <span className={`text-[9px] font-extrabold ${rem.urgent ? 'text-red-500 bg-red-100/40 px-1 py-0.2 rounded' : 'text-indigo-600'}`}>
                   {rem.date}
                 </span>
@@ -298,13 +298,17 @@ export default function FutureFeed({
               <div className="rounded-2xl border border-dashed border-gray-200 bg-white p-6 text-center shadow-inner flex flex-col items-center justify-center">
                 <span className="text-3xl mb-1.5 select-none animate-bounce">🎓</span>
                 <p className="text-[11px] font-black text-gray-500 uppercase tracking-wide">
-                  No jobs yet for your university — explore All Iraq opportunities.
+                  {language === 'ar' 
+                    ? `لا توجد منشورات لجامعتك حالياً. تصفح الفرص العامة لعموم العراق!` 
+                    : language === 'ku' 
+                    ? `هیچ دەرفەتێک بۆ زانکۆکەت نییە لە ئێستادا. دەرفەتە گشتییەکانی عێراق تاقیبکە بکە!` 
+                    : `No jobs yet for your university — explore All Iraq opportunities.`}
                 </p>
                 <div 
                   onClick={() => setActiveChip('internship')}
                   className="mt-2.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-black text-[10px] px-3 py-1.5 rounded-lg border border-indigo-100 transition-colors cursor-pointer"
                 >
-                  Explore General Opportunities
+                  {language === 'ar' ? 'استكشف الفرص العامة للعراق' : language === 'ku' ? 'بینینی هەلی کارە گشتییەکان' : 'Explore General Opportunities'}
                 </div>
               </div>
             ) : (
@@ -335,7 +339,11 @@ export default function FutureFeed({
             </h2>
             {popularLocalItems.length === 0 ? (
               <p className="text-[10px] font-bold text-gray-400 bg-white rounded-2xl p-4 border border-gray-100/80 text-center">
-                No active highlights in {getGovLabel()} yet. Showing Iraqi national highlights instead!
+                {language === 'ar' 
+                  ? `لا توجد منشورات مميزة حالياً في ${getGovLabel()}. معروض لك الفرص العامة في العراق!` 
+                  : language === 'ku' 
+                  ? `هیچ پۆستێکی سەرنجڕاکێش لە ${getGovLabel()} نییە. بەهای گشتی عێراقت پیشان دەدەین!` 
+                  : `No active highlights in ${getGovLabel()} yet. Showing Iraqi national highlights instead!`}
               </p>
             ) : (
               <div className="flex flex-col gap-1">
@@ -459,19 +467,25 @@ export default function FutureFeed({
         <div className="flex flex-col gap-1" id="serious-career-future-list">
           <div className="mb-2 bg-indigo-50/30 p-2.5 rounded-xl border border-indigo-100 flex items-center justify-between text-[11px] font-bold">
             <span className="text-indigo-950">
-              {chips.find(c => c.id === activeChip)?.labelEN} Listings
+              {language === 'ar' 
+                ? `${chips.find(c => c.id === activeChip)?.labelAR} - ${getTranslation('listingsLabel', language)}` 
+                : language === 'ku' 
+                ? `${chips.find(c => c.id === activeChip)?.labelKU} - ${getTranslation('listingsLabel', language)}` 
+                : `${chips.find(c => c.id === activeChip)?.labelEN} Listings`}
             </span>
             <span className="bg-white border border-gray-150 rounded-lg px-2 py-0.5 text-[10px] text-gray-500 font-mono">
-              {finalFilteredOpportunityItems.length} items
+              {finalFilteredOpportunityItems.length} {language === 'ar' ? 'عنصر' : language === 'ku' ? 'بابەت' : 'items'}
             </span>
           </div>
 
           {finalFilteredOpportunityItems.length === 0 ? (
             <div className="text-center py-12 text-gray-400 bg-white border border-gray-100 rounded-3xl p-6">
               <div className="text-3xl mb-2">🎓</div>
-              <h3 className="font-bold text-gray-700 text-xs text-uppercase uppercase">No listings match selection</h3>
+              <h3 className="font-bold text-gray-700 text-xs text-uppercase uppercase">
+                {language === 'ar' ? 'لا توجد فرص مطابقة' : language === 'ku' ? 'هیچ دەرفەتێک نەدۆزرایەوە' : 'No listings match selection'}
+              </h3>
               <p className="text-[10px] text-gray-400 max-w-xs mt-1 mx-auto">
-                No active announcements or jobs are currently posted for this category. Explore other filter chips or return to All board!
+                {getTranslation('listingsEmptyDesc', language)}
               </p>
             </div>
           ) : (

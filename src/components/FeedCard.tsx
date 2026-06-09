@@ -152,7 +152,7 @@ export default function FeedCard({
               className={`w-10 h-10 rounded-xl object-cover border-2 ${
                 item.author.role === 'institution' ? 'border-red-500/60' : item.author.role === 'teacher' ? 'border-indigo-500/60' : 'border-orange-500/40'
               }`}
-              referrerpolicy="no-referrer"
+              referrerPolicy="no-referrer"
             />
             {item.author.verified && (
               <span className="absolute -bottom-1 -right-1 bg-gradient-to-tr from-amber-500 to-orange-500 text-white rounded-full p-0.5 border-2 border-white flex items-center justify-center">
@@ -204,14 +204,14 @@ export default function FeedCard({
         {/* Media Attachments */}
         {item.imageUrl && (
           <div className="rounded-xl overflow-hidden mb-3 border border-gray-100/30 max-h-56 bg-gray-50 flex items-center justify-center">
-            <img src={item.imageUrl} alt={title} className="w-full h-full object-cover" referrerpolicy="no-referrer" />
+            <img src={item.imageUrl} alt={title} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
           </div>
         )}
 
         {/* Video simulation */}
         {item.type === 'video' && item.videoThumbnail && (
           <div className="rounded-xl overflow-hidden mb-3 border border-gray-100/30 h-48 bg-gray-950 relative flex items-center justify-center">
-            <img src={item.videoThumbnail} alt={title} className="w-full h-full object-cover opacity-70" referrerpolicy="no-referrer" />
+            <img src={item.videoThumbnail} alt={title} className="w-full h-full object-cover opacity-70" referrerPolicy="no-referrer" />
             <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
               <div className="w-12 h-12 rounded-full bg-white/95 text-orange-600 flex items-center justify-center shrink-0 shadow-lg cursor-pointer hover:scale-105 active:scale-95 transition-all">
                 <svg className="w-5 h-5 fill-current ml-1" viewBox="0 0 24 24">
@@ -573,7 +573,7 @@ export default function FeedCard({
                       src={comment.authorAvatar} 
                       alt={comment.authorName} 
                       className="w-7 h-7 rounded-lg object-cover shrink-0"
-                      referrerpolicy="no-referrer"
+                      referrerPolicy="no-referrer"
                     />
                     <div className="flex-1">
                       <div className="flex items-center justify-between">

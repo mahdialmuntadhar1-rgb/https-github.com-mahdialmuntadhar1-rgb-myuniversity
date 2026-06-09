@@ -270,6 +270,146 @@ export const translations = {
     en: 'Earn points by solving classmate questions, voting, and participating in campus activities!',
     ar: 'اكسب النقاط لمساعدة زملائك بالإجابة على أسئلتهم، التصويت، والتفاعل مع أنشطة الحرم الجامعي!',
     ku: 'خاڵ بەدەستبهێنە لە ڕێگەی یارمەتیدانی هاوڕێکانت، دەنگدان، و بەشداریکردن لە چالاکییەکاندا!',
+  },
+  switchRoleBtn: {
+    en: 'Switch Role (Simulate Graduate/Teacher/Staff)',
+    ar: 'تبديل المحاكاة (خريج / أستاذ / كادر دائر فني)',
+    ku: 'گۆڕینی ڕۆڵی بەکارهێنەر (تاقیکردنەوەی دەرچوو/مامۆستا/کارمەند)',
+  },
+  eliteStudent: {
+    en: 'Elite Classmate Student',
+    ar: 'طالب متميز متفاعل',
+    ku: 'خوێندکاری چالاک و هۆشیار',
+  },
+  bookmarksEmptyTitle: {
+    en: 'No saved bookmarks yet',
+    ar: 'لا توجد محفوظات حالياً',
+    ku: 'هێشتا هیچ بابەتێک پاشەکەوت نەکراوە',
+  },
+  bookmarksEmptyDesc: {
+    en: 'Click the bookmark icon on any card on Campus Today, Life, or Future tabs to persist it here.',
+    ar: 'اضغط على زر الحفظ في أسفل أي منشور في اليوم أو الحياة أو المستقبل ليظهر في هذه القائمة المسجلة.',
+    ku: 'کلیک لەسەر دوگمەی پاشەکەوتکردن بکە لە خوارەوەی هەر بابەتێک بۆ پاشەکەوتکردنی لێرەدا.',
+  },
+  entriesEmptyTitle: {
+    en: 'No submitted entries yet',
+    ar: 'لا توجد تقديمات أكاديمية نشطة',
+    ku: 'هێشتا هیچ داواکارییەک پێشکەش نەکراوە',
+  },
+  entriesEmptyDesc: {
+    en: 'Your internship applications, event registrations, and study groups will gather here.',
+    ar: 'مشاركاتك في ورش العمل، طلبات التوظيف، انضمامك لمجموعات الدراسة والفعاليات ستظهر هنا.',
+    ku: 'لیستی ناونووسینەکان لێرەدا کۆدەبنەوە بۆ گروپەکانی خوێندن، داواکاری هەلی کار و مەشقەکان.',
+  },
+  alMurshedTitle: {
+    en: 'Al-Murshed AI Advisor LIVE v3.5',
+    ar: 'مساعد المرشد بالذكاء الاصطناعي الأكاديمي ع٣.٥',
+    ku: 'ڕاوێژکاری زیرەکی دەستکردی (مورشد) وەشانی ٣.٥',
+  },
+  verifiedSolution: {
+    en: 'Verified Academic Answer',
+    ar: 'حل أكاديمي موجه معتمد',
+    ku: 'وەڵامی ئەکادیمی پشتڕاستکراوی کورت',
+  },
+  clearMemo: {
+    en: 'Clear conversation & ask another query',
+    ar: 'مسح المحادثة وصياغة سؤال جديد',
+    ku: 'پاککردنەوەی مێژووی چات و پرسیارکردنی نوێ',
+  },
+  classmateCommTitle: {
+    en: 'Consult and benefit with classmate communities',
+    ar: 'استشر زملائك وناقش المواد الأكاديمية معهم',
+    ku: 'ڕاوێژ بکە و سوودمەندبە لەگەڵ هاوپۆلەکانتدا',
+  },
+  classmateCommDesc: {
+    en: 'Post study questions, teacher feedback requests, syllabus difficulties, or finding graduation partners.',
+    ar: 'شارك أسئلة تهم الطلبة، مراجعات للمواد والأساتذة، صعوبة الملازم، أو التنسيق لمشاريع التخرج.',
+    ku: 'پرسیاری تاقیکردنەوەکان، نووسینی فیدباک لەسەر مامۆستا، یان دۆزینەوەی هاوڕێی پڕۆژەی دەرچوون بڵاوبکەرەوە.',
+  },
+  askCommunityBtn: {
+    en: 'Ask Classmates',
+    ar: 'اطرح السؤال للطلاب',
+    ku: 'پرسیار بکە لە خوێندکاران',
+  },
+  activeDiscussionsTitle: {
+    en: 'Active Discussions',
+    ar: 'المناقشات المفتوحة والمشتركة',
+    ku: 'گفتوگۆ و پرسیارە گەرمەکانی خوێندکاران',
+  },
+  noDiscussions: {
+    en: 'No active discussions found',
+    ar: 'لا توجد مناقشات نشطة تناسب تصفيتك الحالية',
+    ku: 'هیچ چالاکییەک یان گفتوگۆیەک نییە بەم فلتەرە',
+  },
+  notificationsTitle: {
+    en: 'Campus Notifications',
+    ar: 'إشعارات الحرم الجامعي',
+    ku: 'ئاگادارییەکانی زانکۆ',
+  },
+  clearAllBtn: {
+    en: 'Clear All',
+    ar: 'مسح الكل',
+    ku: 'پاککردنەوەی هەموو',
+  },
+  notificationEmpty: {
+    en: 'All caught up! No new notifications.',
+    ar: 'أنت مطلع على كل شيء! لا توجد إشعارات غير مقروءة.',
+    ku: 'هەموو شتێک ئاساییە! هیچ ئاگادارییەکی نوێ نییە.',
+  },
+  upcomingDeadlines: {
+    en: 'Upcoming Deadlines & Calendar Reminders',
+    ar: 'تواريخ هامة ومواعيد التقديم النهائية',
+    ku: 'ڕێککەوتە گرنگەکان و دوا مۆڵەتەکانی پێشکەشکردن',
+  },
+  dueDateLabel: {
+    en: 'Due Date',
+    ar: 'تاريخ الاستحقاق النهائي',
+    ku: 'کاتی کۆتایی',
+  },
+  deadlineUrgentCTF: {
+    en: 'Iraq Cybersecurity CTF Application',
+    ar: 'مسابقة الأمن السيبراني الوطنية العراقية',
+    ku: 'کێبڕکێی نیشتمانی بۆ پاراستنی سیبرانی عێراق',
+  },
+  deadlineHunar: {
+    en: 'Hunar Tech Frontend Internship',
+    ar: 'مستندات تدريب هُنر للبرمجة الواجهات',
+    ku: 'ڕاهێنانی دەرچووان لە کۆمپانیای هۆنەر تەکنۆلۆژی',
+  },
+  listingsLabel: {
+    en: 'Listings',
+    ar: 'فرصة مدرجة',
+    ku: 'بابەتی بڵاوکراوە',
+  },
+  listingsEmptyDesc: {
+    en: 'No active announcements or jobs are currently posted for this category. Explore other filters.',
+    ar: 'لا توجد إعلانات رسمية أو فرص عمل شاغرة مطروحة في هذا التصنيف حالياً. جرب فلتراً آخر.',
+    ku: 'هیچ داواکاری ڕاگەیاندن یان کار نییە لەم پۆلێنەدا لە ئێستادا. پۆلێنێکی تر هەڵبژێرە.',
+  },
+  iraqAcademicSloganSub: {
+    en: 'The entire academic Iraq connected in one app.',
+    ar: 'العراق الأكاديمي كله في تطبيق واحد موحد للطلبة 🇮🇶',
+    ku: 'هەموو ناوەندە ئەکادیمییەکانی عێراق لە یەک یەکگرتوودا 🇮🇶',
+  },
+  headlineTopic: {
+    en: 'Headline / Topic (Optional)...',
+    ar: 'عنوان الموضوع أو المنشور (اختياري)...',
+    ku: 'ناونیشانی بابەت (ئارەزوومەندانە)...',
+  },
+  filterAlertMsg: {
+    en: 'Feed is filtered by your Governorate/University selections.',
+    ar: 'يتم تصفية المنشورات الآن طبقاً لاختياراتك الجغرافية والأكاديمية المحددة.',
+    ku: 'بینینی بابەتەکان پاڵێوراوە بەپێی ویلایەت و زانکۆ دیاریکراوەکانت.',
+  },
+  noActivePostsTitle: {
+    en: 'No student shares here yet',
+    ar: 'لا توجد منشورات للطلاب بعد',
+    ku: 'هیچ بابەتێکی هاوبەشکراو لێرەدا وەشانی نییە',
+  },
+  noActivePostsDesc: {
+    en: 'No student shares here yet. Broaden your selectors to see the rest of Iraq!',
+    ar: 'لا توجد منشورات للطلاب هنا لهذه التصفية. وسّع نطاق تحديد المحافظة أو الجامعة لترى المزيد!',
+    ku: 'هیچ پۆستێک نییە بەم گەڕانەت. گەڕانەکەت فراوانتر بکە بۆ بینینی هەموو زانکۆکانی عێراق!',
   }
 };
 

@@ -113,13 +113,15 @@ export default function Header({
                   className="absolute right-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-100 p-2 text-xs text-gray-800 z-50 pointer-events-auto"
                 >
                   <div className="flex justify-between items-center px-2 py-1 border-b border-gray-100 font-bold text-gray-900 mb-1">
-                    <span>Notifications</span>
-                    <button onClick={() => setNotifications([])} className="text-[10px] text-gray-400 hover:text-orange-500">
-                      Clear all
+                    <span>{getTranslation('notificationsTitle', language)}</span>
+                    <button onClick={() => setNotifications([])} className="text-[10px] text-gray-400 hover:text-orange-500 cursor-pointer">
+                      {getTranslation('clearAllBtn', language)}
                     </button>
                   </div>
                   {notifications.length === 0 ? (
-                    <div className="p-4 text-center text-gray-400">All caught up!</div>
+                    <div className="p-4 text-center text-gray-400 font-bold text-[11px] leading-relaxed">
+                      {getTranslation('notificationEmpty', language)}
+                    </div>
                   ) : (
                     <div className="flex flex-col gap-1 max-h-48 overflow-y-auto">
                       {notifications.map(n => (
@@ -141,7 +143,7 @@ export default function Header({
             onClick={onProfileClick}
             className="w-9 h-9 rounded-xl border-2 border-orange-500/35 overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-sm cursor-pointer"
           >
-            <img src={currentUserAvatar} alt="Zara Al-Iraqi Profile" className="w-full h-full object-cover" referrerpolicy="no-referrer" />
+            <img src={currentUserAvatar} alt="Zara Al-Iraqi Profile" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
           </button>
         </div>
 

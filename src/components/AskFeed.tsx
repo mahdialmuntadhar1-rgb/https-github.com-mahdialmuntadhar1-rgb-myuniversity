@@ -110,7 +110,7 @@ export default function AskFeed({
           </div>
           <div>
             <h2 className="text-xs font-black text-orange-400 uppercase tracking-wider flex items-center gap-1">
-              Al-Murshed AI Advisor <span className="bg-orange-500/20 text-orange-300 text-[8px] font-black px-1.5 py-0.2 rounded">LIVE v3.5</span>
+              {language === 'ar' ? 'مستشار الذكاء الاصطناعي' : language === 'ku' ? 'ڕاوێژکاری زیرەکی دەستکرد' : 'Al-Murshed AI Advisor'} <span className="bg-orange-500/20 text-orange-300 text-[8px] font-black px-1.5 py-0.2 rounded">LIVE v3.5</span>
             </h2>
             <h3 className="text-sm font-black text-white pr-2 leading-tight">
               {getTranslation('askAiTitle', language)}
@@ -154,7 +154,7 @@ export default function AskFeed({
               {isAiLoading ? (
                 <>
                   <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                  <span>Analyzing...</span>
+                  <span>{language === 'ar' ? 'تحليل...' : language === 'ku' ? 'شیکردنەوە...' : 'Analyzing...'}</span>
                 </>
               ) : (
                 <>
@@ -178,7 +178,7 @@ export default function AskFeed({
             >
               <div className="flex justify-between items-center text-[9px] font-black text-gray-400 border-b border-gray-100 pb-1.5 uppercase tracking-wider">
                 <span className="flex items-center gap-1 text-indigo-600">
-                  <Clock className="w-3.5 h-3.5" /> Verified Academic Solution
+                  <Clock className="w-3.5 h-3.5" /> {getTranslation('verifiedSolution', language)}
                 </span>
                 <span>Response v3.5-flash</span>
               </div>
@@ -190,9 +190,9 @@ export default function AskFeed({
                   setAskQuery('');
                   setAiResponse(null);
                 }}
-                className="text-[10px] font-black text-center text-orange-600 mt-2 hover:bg-orange-50 py-1.5 rounded bg-orange-50/20 cursor-pointer border border-orange-100/30"
+                className="text-[10px] font-black text-center text-orange-600 mt-2 hover:bg-orange-50 py-1.5 rounded bg-orange-50/20 cursor-pointer border border-orange-100/30 w-full"
               >
-                Clear memo & Ask another query
+                {getTranslation('clearMemo', language)}
               </button>
             </motion.div>
           )}
@@ -209,10 +209,10 @@ export default function AskFeed({
         )}
 
         <h3 className="text-xs font-black text-gray-900 tracking-tight mb-2 flex items-center gap-1">
-          <MessagesSquare className="w-4 h-4 text-orange-500" /> Consult and benefit with classmate communities
+          <MessagesSquare className="w-4 h-4 text-orange-500" /> {getTranslation('classmateCommTitle', language)}
         </h3>
         <p className="text-[10px] text-gray-400 font-bold mb-3">
-          Post study questions, teacher feedback requests, syllabus difficulties, or finding graduation partners.
+          {getTranslation('classmateCommDesc', language)}
         </p>
 
         {/* Input for publishing direct questions */}
@@ -246,7 +246,7 @@ export default function AskFeed({
               className="px-3.5 py-1.8 bg-gray-900 text-white hover:bg-gray-800 text-xs font-bold rounded-xl shadow cursor-pointer transition-colors disabled:opacity-50 flex items-center gap-1.5"
             >
               <Send className="w-3.5 h-3.5" />
-              <span>Ask Community</span>
+              <span>{getTranslation('askCommunityBtn', language)}</span>
             </button>
           </div>
         </form>
@@ -255,7 +255,7 @@ export default function AskFeed({
       {/* 3. ACTIVE QUESTIONS LIST FOR GENERAL BENEFIT */}
       <div id="student-discussions-header" className="mb-3">
         <h3 className="text-[10px] font-black uppercase text-gray-400 tracking-wider flex items-center gap-1">
-          💬 Active Discussions ({questionItems.length})
+          💬 {getTranslation('activeDiscussionsTitle', language)} ({questionItems.length})
         </h3>
       </div>
 
@@ -263,9 +263,9 @@ export default function AskFeed({
         {questionItems.length === 0 ? (
           <div className="text-center py-12 text-gray-400 bg-white border border-gray-100 rounded-3xl p-6">
             <div className="text-3xl mb-2">🔭</div>
-            <h3 className="font-bold text-gray-700 text-xs">No active discussions</h3>
+            <h3 className="font-bold text-gray-700 text-xs">{getTranslation('noDiscussions', language)}</h3>
             <p className="text-[10px] text-gray-400 max-w-xs mt-1 mx-auto">
-              Change selectors and search again.
+              {language === 'ar' ? 'غير عوامل التصفية وابحث من جديد.' : language === 'ku' ? 'فلتەرەکە بگۆڕە و دووبارە بگەڕێ.' : 'Change selectors and search again.'}
             </p>
           </div>
         ) : (

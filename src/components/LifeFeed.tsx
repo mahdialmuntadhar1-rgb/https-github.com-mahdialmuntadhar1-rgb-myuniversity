@@ -111,7 +111,7 @@ export default function LifeFeed({
                     src={story.author.avatar}
                     alt={story.author.name}
                     className="w-13 h-13 rounded-2xl object-cover"
-                    referrerpolicy="no-referrer"
+                    referrerPolicy="no-referrer"
                   />
                 </div>
                 {story.type === 'video' ? (
@@ -190,7 +190,7 @@ export default function LifeFeed({
             {/* Top Close bar */}
             <div className="w-full max-w-lg p-5 flex items-center justify-between text-white z-20">
               <div className="flex items-center gap-2">
-                <img src={selectedStory.author.avatar} alt="Author" className="w-9 h-9 rounded-xl object-cover border border-white/20" referrerpolicy="no-referrer" />
+                <img src={selectedStory.author.avatar} alt="Author" className="w-9 h-9 rounded-xl object-cover border border-white/20" referrerPolicy="no-referrer" />
                 <div>
                   <h4 className="text-xs font-extrabold">{selectedStory.author.name}</h4>
                   <span className="text-[9px] text-stone-400 block">{selectedStory.date}</span>
@@ -208,7 +208,7 @@ export default function LifeFeed({
             <div className="flex-1 w-full max-w-lg flex items-center justify-center relative p-4">
               {selectedStory.videoThumbnail ? (
                 <div className="relative w-full max-h-[70vh] rounded-2xl overflow-hidden aspect-[9/16] bg-black">
-                  <img src={selectedStory.videoThumbnail} className="w-full h-full object-cover" alt="Video frame" referrerpolicy="no-referrer" />
+                  <img src={selectedStory.videoThumbnail} className="w-full h-full object-cover" alt="Video frame" referrerPolicy="no-referrer" />
                   <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
                     <span className="text-[11px] font-bold text-white bg-black/60 px-3 py-1.5 rounded-full flex items-center gap-1">
                       <Eye className="w-4 h-4 text-orange-400" />
@@ -218,7 +218,7 @@ export default function LifeFeed({
                 </div>
               ) : selectedStory.imageUrl ? (
                 <div className="w-full max-h-[70vh] rounded-2xl overflow-hidden">
-                  <img src={selectedStory.imageUrl} className="w-full h-full object-contain" alt="Story graphic" referrerpolicy="no-referrer" />
+                  <img src={selectedStory.imageUrl} className="w-full h-full object-contain" alt="Story graphic" referrerPolicy="no-referrer" />
                 </div>
               ) : (
                 <div className="bg-gradient-to-tr from-orange-500 to-indigo-600 p-8 rounded-2xl text-center text-white text-sm font-bold min-h-[300px] flex flex-col justify-center max-w-md mx-auto">
